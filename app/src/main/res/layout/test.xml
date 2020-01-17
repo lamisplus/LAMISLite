@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/sp10"
+    android:layout_marginRight="@dimen/sp10"
+    android:layout_marginTop="@dimen/sp5"
+    android:layout_marginBottom="@dimen/sp5"
+    >
+
+    <RelativeLayout
+        android:id="@+id/Main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/sp2"
+        android:paddingBottom="@dimen/sp10"
+        >
+
+        <RelativeLayout
+            android:layout_height="@dimen/sp35"
+            android:layout_width="@dimen/sp35"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/sp3"
+            android:padding="@dimen/sp4"
+            android:background="@drawable/icon_bg"
+            >
+            <ImageView
+                android:id="@+id/imgCategory"
+                android:layout_height="@dimen/sp30"
+                android:layout_width="@dimen/sp30"
+                android:layout_marginTop="@dimen/sp5"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="375dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/sp12"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:text="User Account Detail : "
+            android:textColor="@color/colorBlack"
+            android:textSize="15dp" />
+        <TextView
+            android:id="@+id/clientName"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Client Name"
+            android:textColor="@color/colorBlack"
+            android:layout_marginLeft="12dp"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:ellipsize="end"
+            android:layout_below="@+id/txtTitle"
+            android:layout_marginRight="@dimen/sp5" />
+
+        <TextView
+            android:id="@+id/dateBirth"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Date of birth"
+            android:textColor="@color/colorBlack"
+            android:layout_marginLeft="12dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/clientName"
+            android:layout_marginRight="@dimen/sp5"
+            android:maxLines="1"
+            android:ellipsize="end"
+            />
+        <TextView
+            android:id="@+id/age"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Age"
+            android:layout_below="@+id/dateBirth"
+            android:layout_marginLeft="@dimen/sp10"
+            android:layout_marginRight="@dimen/sp11"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/colorBlack"
+            />
+        <TextView
+            android:id="@+id/dateVisit"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Date Of Visit"
+            android:layout_below="@+id/age"
+            android:layout_marginLeft="@dimen/sp10"
+            android:layout_marginRight="@dimen/sp11"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textStyle="bold"
+            android:textColor="@color/colorBlack"
+            />
+        <TextView
+            android:id="@+id/phoneNumber"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Phone Number"
+            android:textStyle="bold"
+            android:layout_below="@+id/dateVisit"
+            android:layout_marginLeft="@dimen/sp10"
+            android:layout_marginRight="@dimen/sp11"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="@color/colorBlack"
+            />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Address"
+            android:layout_below="@+id/phoneNumber"
+            android:layout_marginLeft="@dimen/sp10"
+            android:layout_marginRight="@dimen/sp11"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:ellipsize="end"
+            android:textColor="@color/colorBlack"
+
+            />
+        <TextView
+            android:id="@+id/sex"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Sex"
+            android:layout_below="@+id/address"
+            android:layout_marginLeft="@dimen/sp10"
+            android:layout_marginRight="@dimen/sp11"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:ellipsize="end"
+            android:textColor="@color/colorBlack"
+
+            />
+
+        <TextView
+            android:id="@+id/state"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="State "
+            android:layout_below="@+id/sex"
+            android:layout_marginLeft="@dimen/sp10"
+            android:layout_marginRight="@dimen/sp11"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:ellipsize="end"
+            android:textColor="@color/colorBlack"
+
+            />
+
+        <TextView
+            android:id="@+id/lga"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Sex"
+            android:layout_below="@+id/state"
+            android:layout_marginLeft="@dimen/sp10"
+            android:layout_marginRight="@dimen/sp11"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:ellipsize="end"
+            android:textColor="@color/colorBlack"
+            />
+
+        <TextView
+            android:id="@+id/maritalStatus"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Marital Status"
+            android:layout_below="@+id/lga"
+            android:layout_marginLeft="@dimen/sp10"
+            android:layout_marginRight="@dimen/sp11"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:ellipsize="end"
+            android:textColor="@color/colorBlack"
+            />
+
+        <TextView
+            android:id="@+id/hivStatus"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Hiv Status"
+            android:layout_below="@+id/maritalStatus"
+            android:layout_marginLeft="@dimen/sp10"
+            android:layout_marginRight="@dimen/sp11"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textStyle="bold"
+            android:textColor="@color/colorBlack"
+            />
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
+

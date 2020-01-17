@@ -1,0 +1,590 @@
+<resources>
+    <string name="app_name">LAMISLite</string>
+    <string name="success">Test Result added successfully</string>
+    <string-array name="test_type_array">
+        <item> </item>
+        <item>Individual</item>
+        <item>Group</item>
+        <item>Self Test</item>
+        <item>Coupled</item>
+
+    </string-array>
+
+
+    <string name="pause">Pause Location Updates</string>
+    <string name="resume">Resume Location Updates</string>
+    <string-array name="referredFrom">
+        <item> </item>
+        <item>Self</item>
+        <item>TB</item>
+        <item>STI</item>
+        <item>FP</item>
+        <item>OPD</item>
+        <item>Ward</item>
+        <item>Blood Bank</item>
+        <item>Others</item>
+    </string-array>
+    <string-array name="tesing_result">
+        <item> </item>
+        <item>Positive</item>
+        <item>Negative</item>
+        <item>Indeterminate</item>
+    </string-array>
+
+    <string-array name="testing">
+        <item> </item>
+        <item>Facility</item>
+        <item>Community</item>
+        <item>Standalone Hts</item>
+    </string-array>
+
+    <string-array name="server">
+        <item> </item>
+    </string-array>
+
+    <string-array name="tested_result">
+        <item> </item>
+        <item>Negative</item>
+        <item>Positive</item>
+
+    </string-array>
+
+
+    <string-array name="sex">
+        <item> </item>
+        <item>Male</item>
+        <item>Female</item>
+        <!--<item>Trans Male</item>-->
+        <!--<item>Trans Female</item>-->
+        <!--<item>Gender Queer</item>-->
+    </string-array>
+
+
+    <string-array name="spinner_func_status">
+        <item> </item>
+        <item>Working</item>
+        <item>Ambulatory</item>
+        <item>Bedridden</item>
+
+    </string-array>
+
+    <string-array name="spinner_clinical_statge">
+        <item> </item>
+        <item>Stage I</item>
+        <item>Stage II</item>
+        <item>Stage III</item>
+        <item>Stage IV</item>
+
+    </string-array>
+
+    <string-array name="tesing_point">
+        <item> </item>
+        <item>HTS Standalone</item>
+        <item>PMTCT</item>
+        <item>TB Site</item>
+        <item>Family Planning</item>
+        <item>OPD</item>
+        <item>A&amp;E</item>
+        <item>In-patient Ward</item>
+        <item>Pediatric Ward</item>
+        <item>Outreach</item>
+        <item>Others</item>
+    </string-array>
+
+
+    <string-array name="tb_screaning">
+        <item> </item>
+        <item>0</item>
+        <item>1+</item>
+    </string-array>
+
+
+    <string-array name="age_unit">
+        <item> </item>
+        <item>Year(s)</item>
+        <item>Month(s)</item>
+        <item>Day(s)</item>
+
+    </string-array>
+
+
+    <string-array name="setting">
+        <item> </item>
+        <item>CT</item>
+        <item>TB</item>
+        <item>STI</item>
+        <item>OPD</item>
+        <item>Ward</item>
+        <item>Community</item>
+        <item>Standalone HTS</item>
+        <item>OTHERS</item>
+
+    </string-array>
+
+
+    <string-array name="tested_resultx">
+        <item> </item>
+        <item>Not Previously tested</item>
+        <item>Previously tested</item>
+        <item>Previously tested negative</item>
+        <item>Previously tested positive in Hiv care</item>
+        <item>Previously tested positive not in Hiv care</item>
+
+
+    </string-array>
+
+
+    <string-array name="type_session">
+        <item> </item>
+        <item>Individual</item>
+        <item>Couple</item>
+
+
+    </string-array>
+
+    <string-array name="maristal_status">
+        <item> </item>
+        <item>Single</item>
+        <item>Married</item>
+        <item>Co-Habiting</item>
+        <item>Divorced</item>
+        <item>Widowed</item>
+
+    </string-array>
+
+
+    <string-array name="first_time_visit">
+        <item> </item>
+        <item>YES</item>
+        <item>NO</item>
+
+
+    </string-array>
+
+
+    <string name="hello_world">Hello world!</string>
+    <string name="first">First</string>
+    <string name="next">Next</string>
+    <string name="previous">Prev</string>
+    <string name="last">Last</string>
+
+
+    <string-array name="sti_screaning">
+        <item> </item>
+        <item>0</item>
+        <item>1</item>
+
+
+    </string-array>
+
+    <string-array name="sphili_test">
+        <item> </item>
+        <item>R</item>
+        <item>NR</item>
+
+
+    </string-array>
+
+
+    <string-array name="emptyspace">
+        <item> </item>
+
+    </string-array>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="nav_item_list">My Clients</string>
+    <string name="nav_item_hts">HIV Testing &amp; Counseling</string>
+    <string name="nav_item_client">Client Tracking</string>
+    <string name="nav_item_patient">Patient Registration</string>
+    <string name="nav_item_sync">Synchronize</string>
+    <string name="nav_item_report">Patient List</string>
+    <string name="nav_item_dashboard">Dashboard</string>
+    <string name="set_up">Set Up</string>
+
+    <string-array name="nav_drawer_labels">
+        <item>@string/nav_item_list</item>
+        <item>@string/nav_item_hts</item>
+        <item>@string/nav_item_client</item>
+        <item>@string/nav_item_patient</item>
+        <item>@string/nav_item_sync</item>
+        <item>@string/nav_item_report</item>
+        <item>@string/nav_item_dashboard</item>
+        <item>@string/set_up</item>
+    </string-array>
+
+
+    <string-array name="hapatitisb">
+        <item> </item>
+        <item>Negative</item>
+        <item>Positive</item>
+
+
+    </string-array>
+
+    <string-array name="hapatitisc">
+        <item> </item>
+        <item>NEG</item>
+        <item>POS</item>
+
+    </string-array>
+
+
+
+    <string-array name="referedart">
+        <item> </item>
+        <item>NO</item>
+        <item>YES</item>
+    </string-array>
+
+
+    <string-array name="oneAndTwo">
+        <item> </item>
+        <item>NO</item>
+        <item>YES</item>
+    </string-array>
+
+    <string-array name="answerToQuestion1">
+        <item> </item>
+        <item>Positive not on ART</item>
+        <item>Positive on ART</item>
+        <item>Negative less than 6 Months</item>
+        <item>Negative more than 6 Months</item>
+        <item>Unknown</item>
+        <item>Never Tested</item>
+
+    </string-array>
+
+    <string-array name="phoneContactTracking">
+        <item> </item>
+        <item>1st</item>
+        <item>2nd</item>
+        <item>3rd</item>
+        <item>4th</item>
+        <item>5th</item>
+    </string-array>
+
+    <string-array name="visitContactTracking">
+        <item> </item>
+        <item>1st</item>
+        <item>2nd</item>
+
+    </string-array>
+
+    <string-array name="empty">
+        <item> </item>
+
+    </string-array>
+
+    <!--<string-array name="select">-->
+    <!--<item>&#45;&#45;Select&#45;&#45; </item>-->
+
+    <!--</string-array>-->
+    <string-array name="spinner_relationship_index">
+        <item></item>
+        <item>Spouse</item>
+        <item>Live-in Partner</item>
+        <item>Boyfriend/Girlfriend</item>
+        <item>Regular Casual Partners</item>
+        <item>Infrequent Casual Partner</item>
+        <item>Sex Worker</item>
+        <item>Boyfriend/Girlfriend</item>
+    </string-array>
+
+
+    <string-array name="spinner_outcome">
+        <item></item>
+        <item>Accepts HTS</item>
+        <item>Declines HTS</item>
+    </string-array>
+
+
+    <string-array name="spinner_index_type">
+        <item></item>
+        <item>Original Index</item>
+        <item>Primary Contact Index</item>
+        <item>Secondary Contact Index</item>
+        <item>Tertiary Contact Index</item>
+        <item>Re-counseling</item>
+    </string-array>
+
+    <string-array name="spinner_contact_type">
+        <item></item>
+        <item>Primary Contacts</item>
+        <item>Secondary Contacts</item>
+        <item>Tertiary Contacts</item>
+
+    </string-array>
+
+    <string-array name="number">
+        <item> </item>
+        <item>0</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+
+    </string-array>
+    <string-array name="statelist">
+        <item> </item>
+        <item>Abia</item>
+        <item>Adamawa</item>
+        <item>Akwa Ibom</item>
+        <item>Anambra</item>
+        <item>Bauchi</item>
+        <item>Bayelsa</item>
+        <item>Benue</item>
+        <item>Borno</item>
+        <item>Cross River</item>
+        <item>Delta</item>
+        <item>Ebonyi</item>
+        <item>Enugu</item>
+        <item>Edo</item>
+        <item>Ekiti</item>
+        <item>Gombe</item>
+        <item>Imo</item>
+        <item>Jigawa</item>
+        <item>Kaduna</item>
+        <item>Kano</item>
+        <item>Katsina</item>
+        <item>Kebbi</item>
+        <item>Kogi</item>
+        <item>Kwara</item>
+        <item>Lagos</item>
+        <item>Nasarawa</item>
+        <item>Niger</item>
+        <item>Ogun</item>
+        <item>Ondo</item>
+        <item>Osun</item>
+        <item>Oyo</item>
+        <item>Plateau</item>
+        <item>Rivers</item>
+        <item>Sokoto</item>
+        <item>Taraba</item>
+        <item>Yobe</item>
+        <item>Zamfara</item>
+        <item>FCT</item>
+    </string-array>
+    <string-array name="biosexual">
+        <item> </item>
+        <item>Biological</item>
+        <item>Sexual</item>
+        <item>Social</item>
+    </string-array>
+
+
+    <string-array name="syphili_tested_result">
+        <item> </item>
+        <item>Non-Reactive</item>
+        <item>Reactive</item>
+    </string-array>
+
+
+    <string-array name="spinner_age_unit">
+        <item></item>
+        <item>Year(s)</item>
+        <item>Month(s)</item>
+        <item>Day(s)</item>
+    </string-array>
+
+    <string-array name="spinner_marital_status">
+        <item></item>
+        <item>Single</item>
+        <item>Married</item>
+        <item>Widowed</item>
+        <item>Separated</item>
+        <item>Divorced</item>
+    </string-array>
+
+    <string-array name="spinner_education">
+        <item></item>
+        <item>None</item>
+        <item>Primary</item>
+        <item>Senior Secondary</item>
+        <item>Quranic</item>
+        <item>Junior Secondary</item>
+        <item>Post Secondary</item>
+    </string-array>
+
+    <string name="google_maps_key">map_key</string>
+    <string-array name="statusRegistration">
+        <item></item>
+        <item>HIV exposed  status unknown</item>
+        <item>HIV+ non ART</item>
+        <item>ART Transfer In</item>
+        <item>Pre-ART Transfer In</item>
+
+    </string-array>
+
+    <string-array name="spinner_occupation">
+        <item></item>
+        <item>Unemployed</item>
+        <item>Employed</item>
+        <item>Student</item>
+        <item>Retired</item>
+    </string-array>
+
+    <string-array name="spinner_entry_point">
+        <item></item>
+        <item>OPD</item>
+        <item>In patients</item>
+        <item>HCT</item>
+        <item>TB DOTS</item>
+        <item>STI Clinic</item>
+        <item>PMTCT</item>
+        <item>Transfer-in</item>
+        <item>Outreaches</item>
+        <item>CBO</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="spinner_hiv_status">
+        <item></item>
+        <item>HIV exposed status unknown</item>
+        <item>HIV+ non ART</item>
+        <item>ART Transfer In</item>
+        <item>Pre-ART Transfer In</item>
+    </string-array>
+
+    <string-array name="spinner_hiv_status_index">
+        <item></item>
+        <item>Negative</item>
+        <item>Positive</item>
+        <item>Previously Known</item>
+
+    </string-array>
+
+    <string-array name="spinner_hiv_mode_of_notification">
+        <item></item>
+        <item>Passive Notification/Self</item>
+        <item>Provider Assisted</item>
+        <item>Contracted</item>
+        <item>Household referral/Clustering</item>
+
+    </string-array>
+
+    <string-array name="spinner_tb_status">
+        <item></item>
+        <item>No sign or symptoms of TB</item>
+        <item>TB suspected and referred for evaluation</item>
+        <item>Currently on INH prophylaxis</item>
+        <item>Currently on TB treatment</item>
+        <item>TB positive not on TB drugs</item>
+    </string-array>
+
+    <string-array name="spinner_time_diagnosis">
+        <item></item>
+        <item>Newly Tested HIV+ (ANC)</item>
+        <item>Previously known HIV+ (ANC)</item>
+        <item>Newly Tested HIV+ (L/D)</item>
+        <item>Previously known HIV+ (L/D)</item>
+        <item>Newly Tested HIV+ (PP &lt;=72hrs)</item>
+        <item>Previously konwn HIV+ (PP &lt;=72hrs)</item>
+        <item>Newly Tested HIV+ (PP &gt;72hrs)</item>
+        <item>Previously konwn HIV+ (PP &gt;72hrs)</item>
+    </string-array>
+
+    <string-array name="spinner_source_referral">
+        <item></item>
+        <item>PMTCT outreach</item>
+        <item>Sex worker outreach</item>
+        <item>Medical outpatient</item>
+        <item>Youth/Adolescent outreach</item>
+        <item>Private/Commercial Health facility</item>
+        <item>Under-fives/Immunization clinic</item>
+        <item>External HCT centre</item>
+        <item>CBO</item>
+        <item>In-patients</item>
+        <item>Self-referral</item>
+    </string-array>
+
+    <string-array name="spinner_pregnancy_status">
+        <item></item>
+        <item>Not Pregnant</item>
+        <item>Pregnant</item>
+        <item>Breastfeeding</item>
+    </string-array>
+
+    <string-array name="spinner_relationship">
+        <item></item>
+        <item>Aunt</item>
+        <item>Brother</item>
+        <item>Cousin</item>
+        <item>Daughter</item>
+        <item>Father</item>
+        <item>Friend</item>
+        <item>Grand parent</item>
+        <item>Mother</item>
+        <item>Son</item>
+        <item>Spouse</item>
+        <item>Sister</item>
+        <item>Treatment supporter</item>
+        <item>Uncle</item>
+    </string-array>
+
+
+    <string-array name="new_status">
+        <item></item>
+        <item>ART Restart</item>
+        <item>ART Transfer Out</item>
+        <item>Pre-ART Transfer Out</item>
+        <item>Lost to Follow Up</item>
+        <item>Stopped Treatment</item>
+        <item>Died(Confirmed)</item>
+        <item>Previousely Undocumented Patient Transfer (Confirmed)</item>
+        <item>Traced Patient (Unable to locate)</item>
+        <item>Traced Patient and agreed to return  care</item>
+        <item>Did Not Attempt to Trace Patient</item>
+
+    </string-array>
+
+
+
+    <string-array name="cause_death">
+        <item></item>
+        <item>HIV disease resulting in TB</item>
+        <item>HIV disease resulting in cancer</item>
+        <item>HIV disease resulting in other infectious and parasitic disease</item>
+        <item>Other HIV disease resulting in other disease or conditions leading to death</item>
+        <item>Other natural causes</item>
+        <item>Non-natural causes</item>
+        <item>Unknown cause</item>
+
+    </string-array>
+
+
+
+    <string-array name="reason_interuption">
+        <item></item>
+        <item>Toxicity/side effect</item>
+        <item>Pregnancy</item>
+        <item>Treatment failure</item>
+        <item>Poor adherence</item>
+        <item>Illness, hospitalization</item>
+        <item>Drug out of stock</item>
+        <item>Patient lacks finances</item>
+        <item>Other patient decision</item>
+        <item>Planned Rx interruption</item>
+        <item>Other</item>
+
+    </string-array>
+
+
+
+
+
+
+
+
+</resources>

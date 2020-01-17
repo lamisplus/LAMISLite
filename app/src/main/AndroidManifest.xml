@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.fhi360.lamis.mobile.lite">
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:usesCleartextTraffic="true"
+        android:supportsRtl="true"
+        android:theme="@style/MyMaterialTheme">
+
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="org.fhi360.lamis.mobile.lite.Service.IntentServiceHandler"
+            android:exported="false" />
+
+
+        <service
+            android:name="org.fhi360.lamis.mobile.lite.Service.DefaulterIntentService"
+            android:exported="false" />
+
+        <service
+            android:name="org.fhi360.lamis.mobile.lite.Service.LocalSystemIpAddressServices"
+            android:exported="false" />
+
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.PatientRegistration"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Fragments.SetUp"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.ProfileActivity2"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.StatusHistoryActivity"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.EditHts"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.EditPatient"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.EditPatient2"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.PatientRegistration"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.EditIndexSexualContact"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.EditIndex"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.EditPatient3"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.ProfileActivity2"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.ClientTracking2"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.Home"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.ProfileActivity"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.ArtCommencement"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.PatientRegistration"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.ArtCommencement2"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.PatientRegistration"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+
+
+
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.HtsRegistration"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+
+            />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.CreateAccount"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+
+            />
+
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.EditArtCommencement"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+
+            />
+
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.EditArtCommencement2"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+
+            />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.Activation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.IndexTesting"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
+
+            />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+    </application>
+</manifest>
