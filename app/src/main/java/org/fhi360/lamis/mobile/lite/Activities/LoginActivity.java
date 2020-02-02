@@ -41,7 +41,6 @@ import org.fhi360.lamis.mobile.lite.Model.State;
 import org.fhi360.lamis.mobile.lite.Service.APIService;
 import org.fhi360.lamis.mobile.lite.Service.ClientAPI;
 import org.fhi360.lamis.mobile.lite.Service.ServiceScheduler;
-import org.fhi360.lamis.mobile.lite.Utils.GetCurrentLocation;
 import org.fhi360.lamis.mobile.lite.Utils.GetGPSLocation;
 import org.fhi360.lamis.mobile.lite.Utils.PrefManager;
 import org.fhi360.lamis.mobile.lite.R;
@@ -97,8 +96,7 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn = findViewById(R.id.button_login);
         ServiceScheduler intentServiceHandler = new ServiceScheduler(this);
         intentServiceHandler.start();
-
-        HashMap<String, String> user = prefManager.getHtsDetails();
+        //HashMap<String, String> user = prefManager.getHtsDetails();
         deviceconfigId = Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
         HashMap<String, String> isAccountCreated = prefManager.checkIfUserExist();
         String isAccountCreated1 = isAccountCreated.get("isAccountCreated");
@@ -203,13 +201,13 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        currentLoc.connectGoogleApi();
+        //    currentLoc.connectGoogleApi();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        currentLoc.disConnectGoogleApi();
+        //  currentLoc.disConnectGoogleApi();
 
 
     }
