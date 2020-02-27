@@ -28,21 +28,20 @@ import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import org.fhi360.lamis.mobile.lite.DAO.GeoLocationDAO;
 import org.fhi360.lamis.mobile.lite.DAO.HtsDAO;
 import org.fhi360.lamis.mobile.lite.DAO.LgaDAO;
 import org.fhi360.lamis.mobile.lite.DAO.StateDAO;
-import org.fhi360.lamis.mobile.lite.Db.LAMISLiteDb;
-import org.fhi360.lamis.mobile.lite.Model.Geolocation;
-import org.fhi360.lamis.mobile.lite.Model.GetNameId;
+
 import org.fhi360.lamis.mobile.lite.Model.Hts;
 import org.fhi360.lamis.mobile.lite.Model.Hts2;
 import org.fhi360.lamis.mobile.lite.Model.Lga;
 import org.fhi360.lamis.mobile.lite.Model.State;
 import org.fhi360.lamis.mobile.lite.Service.NotificationService;
-import org.fhi360.lamis.mobile.lite.Utils.GetCurrentLocation;
+
+import org.fhi360.lamis.mobile.lite.Utils.GetGPSLocation;
 import org.fhi360.lamis.mobile.lite.Utils.PrefManager;
 import org.fhi360.lamis.mobile.lite.Utils.SettingConfig;
+
 
 import com.library.NavigationBar;
 import com.library.NvTab;
@@ -102,7 +101,8 @@ public class HtsRegistration extends AppCompatActivity implements NavigationBar.
             inputLayoutaddress,
             inputLayoutPhone;
     private String assessmentId = "";
-
+    private GetGPSLocation currentLoc;
+    private LocationManager locationManager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -110,7 +110,8 @@ public class HtsRegistration extends AppCompatActivity implements NavigationBar.
         setContentView(R.layout.fragment_home);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources()
                 .getColor(R.color.colorPrimaryDark)));
-
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        currentLoc = new GetGPSLocation(this);
         bar = findViewById(R.id.navBar);
         bar.setOnTabClick(this);
         setup(true, 4);
@@ -154,10 +155,8 @@ public class HtsRegistration extends AppCompatActivity implements NavigationBar.
         clientCode = findViewById(R.id.clientCode);
         clientCode.setEnabled(false);
         HashMap<String, String> user = session.getHtsDetails();
-
         HashMap<String, String> assesment = session.getAssessmentId();
         assessmentId = assesment.get("assessmentId");
-
         System.out.println("ASSESSMENT ID " + assessmentId);
         facilityName = user.get("faciltyName");
         lgaId = user.get("lgaId");
@@ -381,32 +380,32 @@ public class HtsRegistration extends AppCompatActivity implements NavigationBar.
 
             }
         });
-
-        testingSetting.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String testingSetting1 = testingSetting.getSelectedItem().toString();
-                if (testingSetting1.equals("CT") ||
-                        testingSetting1.equals("TB")
-                        || testingSetting1.equals("STI") ||
-                        testingSetting1.equals("OPD")
-                        || testingSetting1.equals("Ward")
-                        || testingSetting1.equals("OTHERS")
-                ) {
-
-                    geoLocationPopUp("Facility");
-                } else if (testingSetting1.equals("Community")) {
-                    geoLocationPopUp("Community");
-                } else if (testingSetting1.equals("Standalone Hts")) {
-                    geoLocationPopUp("Standalone Hts");
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
+//
+//        testingSetting.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//                String testingSetting1 = testingSetting.getSelectedItem().toString();
+//                if (testingSetting1.equals("CT") ||
+//                        testingSetting1.equals("TB")
+//                        || testingSetting1.equals("STI") ||
+//                        testingSetting1.equals("OPD")
+//                        || testingSetting1.equals("Ward")
+//                        || testingSetting1.equals("OTHERS")
+//                ) {
+//
+//                    geoLocationPopUp("Facility");
+//                } else if (testingSetting1.equals("Community")) {
+//                    geoLocationPopUp("Community");
+//                } else if (testingSetting1.equals("Standalone Hts")) {
+//                    geoLocationPopUp("Standalone Hts");
+//                }
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> adapterView) {
+//
+//            }
+//        });
 
         tbScreening2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -589,8 +588,6 @@ public class HtsRegistration extends AppCompatActivity implements NavigationBar.
                     } else if (gender.getSelectedItem().toString().equals("")) {
                         FancyToast.makeText(HtsRegistration.this, "Select gender", FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show();
                     } else if (!gender.getSelectedItem().toString().equals("")) {
-
-
                         HashMap<String, String> user = session.getHtsDetails();
                         String facilityName = user.get("faciltyName");
                         String lgaId = user.get("lgaId");
@@ -607,17 +604,14 @@ public class HtsRegistration extends AppCompatActivity implements NavigationBar.
                         } else {
                             hts.setAssessmentId(0);
                         }
-                        coordinate = session.getCoordnitae();
-                        if (coordinate.get("longitude") != null && coordinate.get("latitude") != "") {
-                            longitude = coordinate.get("longitude");
-                            latitude = coordinate.get("latitude");
-                            hts.setLongitude(Float.parseFloat(longitude));
-                            hts.setLatitude(Float.parseFloat(latitude));
-                        }
+                        currentLoc.connectGoogleApi();
+                        longitude = new PrefManager(getApplicationContext()).getCoordnitae().get("longitude");
+                        latitude = new PrefManager(getApplicationContext()).getCoordnitae().get("latitude");
+                        hts.setLongitude(Float.parseFloat(longitude));
+                        hts.setLatitude(Float.parseFloat(latitude));
 
                         name = surname.getText().toString() + "  " + otherName.getText().toString();
                         clientCode.setText(auoIncrementClientCode);
-
                         hts.setClientCode(clientCode.getText().toString());
                         if (referredFrom.getSelectedItem().toString().equalsIgnoreCase("")) {
                             hts.setReferredFrom("");
@@ -945,14 +939,14 @@ public class HtsRegistration extends AppCompatActivity implements NavigationBar.
     public void onStart() {
         super.onStart();
         coordinate = session.getCoordnitae();
-        if (coordinate.get("longitude") != null && coordinate.get("latitude") != "") {
-            NotificationService notificationService = new NotificationService(getApplicationContext());
-            notificationService.createNotification("LAMISLite", "Your device location is captured");
-        } else {
-            NotificationService notificationService = new NotificationService(getApplicationContext());
-            notificationService.createNotification("LAMISLite", "Enable your GPS Location");
-
-        }
+//        if (coordinate.get("longitude") != null && coordinate.get("latitude") != "") {
+        NotificationService notificationService = new NotificationService(getApplicationContext());
+        notificationService.createNotification("LAMISLite", "Your device location is captured");
+//        } else {
+//            NotificationService notificationService = new NotificationService(getApplicationContext());
+//            notificationService.createNotification("LAMISLite", "Enable your GPS Location");
+//
+//        }
     }
 
     @Override
@@ -971,15 +965,15 @@ public class HtsRegistration extends AppCompatActivity implements NavigationBar.
                 postTest131, postTest141, syphilisTestResult1, hepatitiscTestResult1, hepatitisbTestResult1, ageUnit1,
                 stiReferred1, tbReferred1, artReferred1;
         coordinate = session.getCoordnitae();
-        if (coordinate.get("longitude") != null && coordinate.get("latitude") != "") {
+//        if (coordinate.get("longitude") != null && coordinate.get("latitude") != "") {
 
-            NotificationService notificationService = new NotificationService(getApplicationContext());
-            notificationService.createNotification("LAMISLite", "Your device location is captured");
-        } else {
-            NotificationService notificationService = new NotificationService(getApplicationContext());
-            notificationService.createNotification("LAMISLite", "Enable your GPS Location");
-
-        }
+        NotificationService notificationService = new NotificationService(getApplicationContext());
+        notificationService.createNotification("LAMISLite", "Your device location is captured");
+//        } else {
+//            NotificationService notificationService = new NotificationService(getApplicationContext());
+//            notificationService.createNotification("LAMISLite", "Enable your GPS Location");
+//
+//        }
 
         HashMap<String, String> user1 = session.getHtsInstance();
         indexClientCode2 = user1.get("indexClientCode");
@@ -1438,79 +1432,9 @@ public class HtsRegistration extends AppCompatActivity implements NavigationBar.
                 dialog.dismiss();
             }
         });
-
         dialog.setCancelable(false);
         dialog.show();
     }
 
-
-    private void geoLocationPopUp(String testingSetting) {
-        List<GetNameId> listName = new GeoLocationDAO(getApplicationContext()).getGeolocationName1(testingSetting);
-        if (listName.isEmpty()) {
-            FancyToast.makeText(HtsRegistration.this, "No Coordinate captured for this location", FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show();
-        } else {
-            LayoutInflater li = LayoutInflater.from(HtsRegistration.this);
-
-            View promptsView = li.inflate(R.layout.activity_facility_community_pop_up, null);
-            final AlertDialog dialog = new AlertDialog.Builder(HtsRegistration.this).create();
-            dialog.setView(promptsView);
-
-            if (getApplicationContext() instanceof HtsRegistration) {
-                ((HtsRegistration) getApplicationContext()).getIntent();
-            }
-            final AppCompatSpinner grid = promptsView.findViewById(R.id.grid);
-            final TextView longitude = promptsView.findViewById(R.id.tvLongitudes);
-            final TextView latitude = promptsView.findViewById(R.id.tvLatitudes);
-            final Button ok = promptsView.findViewById(R.id.save);
-            final ArrayList geoId = new ArrayList();
-            final ArrayList name1 = new ArrayList();
-            geoId.add(0L);
-            name1.add(0,"");
-            for (GetNameId listNam : listName) {
-                geoId.add(listNam.getId());
-                name1.add(listNam.getName());
-            }
-
-            final ArrayAdapter<String> districtAdapter = new ArrayAdapter<>(getApplicationContext(),
-                    R.layout.spinner_items, name1);
-            districtAdapter.setDropDownViewResource(R.layout.color_spinner_layout);
-            grid.setAdapter(districtAdapter);
-            districtAdapter.notifyDataSetChanged();
-            grid.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-                    Long id1 = (Long) geoId.get(position);
-                    if (id1 != null) {
-                        String longitude1 = "";
-                        String latitude1 = "";
-                        List<Geolocation> geolocationss = new ArrayList<>();
-                        geolocationss = new GeoLocationDAO(getApplicationContext()).getLongitudeAndLatitude(id1);
-                        for (Geolocation lat : geolocationss) {
-                            longitude1 = String.valueOf(lat.getLongitude());
-                            latitude1 = String.valueOf(lat.getLatitude());
-                        }
-                        longitude.setText(longitude1);
-                        latitude.setText(latitude1);
-                    }
-                }
-
-                @Override
-                public void onNothingSelected(AdapterView<?> adapterView) {
-
-                }
-            });
-
-            ok.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    new PrefManager(getApplicationContext()).createCoordinate(longitude.getText().toString(), latitude.getText().toString());
-                    dialog.dismiss();
-                }
-
-            });
-            dialog.setCancelable(false);
-            dialog.show();
-        }
-    }
 
 }
